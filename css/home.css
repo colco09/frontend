@@ -8,6 +8,8 @@
   --default-radius: 5px;
   --body-color: #efefef;
   --default-white: #ffffff;
+  --default-border: 1px solid rgb(224, 214, 214);
+  --faded-text: rgb(224, 214, 214);
 }
 * {
   padding: 0;
@@ -45,7 +47,7 @@ header {
   padding: 10px 15px;
   height: 70px;
   background: var(--default-white);
-  border: 1px solid rgb(161, 158, 158);
+  border: var(--default-border);
 }
 
 .logo_search {
@@ -66,7 +68,7 @@ header {
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
-  border: 1px solid grey;
+  border: var(--default-border);
   padding: 0 5px;
   border-radius: var(--default-radius);
   overflow: hidden;
@@ -126,6 +128,7 @@ header {
 .options_menu {
   width: 20%;
   padding: 10px 10px;
+  max-width: 120vh;
 }
 .options-list li {
   display: flex;
@@ -143,10 +146,15 @@ header {
   background: var(--hover-color);
 }
 
-.content {
+main {
   display: flex;
   flex-direction: column;
   width: 50%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .content-options {
   width: 100%;
@@ -170,10 +178,12 @@ header {
 }
 .post {
   width: 100%;
-  height: 45vh;
+  height: auto;
   background: var(--default-white);
   border-radius: var(--default-radius);
   padding: 15px 20px;
+  border: var(--default-border);
+  margin-bottom: 15px;
 }
 .post-author-info {
   display: flex;
@@ -254,7 +264,53 @@ header {
   font-size: 1rem;
 }
 
+/* SIDEBAR UPDATES */
 .updates {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 25%;
-  border: 1px solid brown;
+  max-height: 120vh;
+}
+
+.primary-update {
+  width: 100%;
+  padding: 15px 15px;
+  border: var(--default-border);
+  border-radius: var(--default-radius);
+  background: var(--default-white);
+  margin-bottom: 15px;
+}
+.primary-update-para {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+.primary-update-link {
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.secondary-updates {
+  width: 100%;
+  border: var(--default-border);
+  border-radius: var(--default-radius);
+  background: var(--default-white);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  overflow: hidden;
+}
+.secobdary-updates-nav {
+  padding: 15px 15px;
+  align-items: center;
+  border-bottom: var(--default-border);
+}
+.secondary-updates-content {
+  padding: 15px 15px;
+  border-bottom: var(--default-border);
+  background: var(--default-white);
+}
+.secondary-updates-comment-count {
+  font-size: 0.8rem;
+  color: var(--faded-text);
 }
